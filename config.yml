@@ -6,7 +6,7 @@ solids:
   prepare_grid_random_forest:
     inputs:
       key:
-        value: 'rf'
+        value: 'RandomForestClassifier'
       param_grid:
         value: {"n_estimators": [5, 10],
                 "max_features": ["auto"],
@@ -14,7 +14,7 @@ solids:
   prepare_grid_logistic_regression:
     inputs:
       key:
-        value: 'reg'
+        value: 'LogisticRegression'
       param_grid:
         value: {"penalty":["l2", "none"],
                 "class_weight": ["balanced", "None"]}

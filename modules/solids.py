@@ -45,7 +45,7 @@ def vectorize_text(context, df):
     x = df['comment']
     vectorizer = CountVectorizer()
     X = CountVectorizer().fit_transform(x).todense()
-    joblib.dump(vectorizer,'tmp/vectorizer.pkl')
+    joblib.dump(vectorizer,'data/tmp/vectorizer.pkl')
     return X
 
 ##### Training and evaluation #####
@@ -60,9 +60,9 @@ def split_data(context, X,y):
     # train_test_data = [x_train, y_train, x_test, y_test]
     training_data = [x_train, y_train]
     testing_data = [x_test, y_test]
-    joblib.dump(training_data,'data/processed/training_data.pkl')
-    joblib.dump(testing_data,'data/processed/testing_data.pkl')
-    logging.debug('training and testing data saved in /data/processed')
+    joblib.dump(training_data,'data/tmp/training_data.pkl')
+    joblib.dump(testing_data,'data/tmp/testing_data.pkl')
+    logging.debug('training and testing data saved in /data/tmp')
     # logging.debug(train_test_data)
     yield Output(training_data, 'train')
     yield Output(testing_data, 'test') 
